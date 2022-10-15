@@ -32,13 +32,14 @@ app.use(cors());
 app.use(morgan(env));
 
 app.use("/uploads", express.static(__dirname + "/uploads"));
-app.use(express.static(path.join(__dirname, "/frontend/build")));
 
 readdirSync("./backend/routes").map((route) => {
   app.use("/api", require(`./backend/routes/${route}`));
 });
 
 app.get("/system", systemInfo);
+
+app.use(express.static(path.join(__dirname, "/frontend/build")));
 
 app.get("*", (req, res) => {
   console.log(path.join(__dirname, "/frontend/build", "index.html"));
