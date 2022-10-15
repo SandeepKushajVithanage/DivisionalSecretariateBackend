@@ -30,10 +30,10 @@ app.use(cors());
 app.use(morgan(env));
 
 app.use("/uploads", express.static(__dirname + "/uploads"));
-app.use(express.static(path.join(__dirname, "/frontend/build")));
+app.use(express.static(__dirname + "/frontend/build"));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/frontend/build", "index.html"));
+  res.sendFile(__dirname + "/frontend/build/index.html");
 });
 
 readdirSync("./backend/routes").map((route) => {
