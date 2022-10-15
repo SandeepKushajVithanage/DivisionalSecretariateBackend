@@ -4,9 +4,9 @@
   "private": false,
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js",
+    "heroku-postbuild": "cd frontend && yarn install && yarn build"
   },
-  "heroku-postbuild": "cd frontend && yarn install && yarn build",
   "heroku-run-build-script": true,
   "dependencies": {
     "axios": "^0.26.1",
