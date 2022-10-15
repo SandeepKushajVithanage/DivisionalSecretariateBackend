@@ -17,6 +17,7 @@ const {
   initializeMessages,
   initializeChat,
 } = require("./backend/realtimeFeatures/socket");
+const { systemInfo } = require("./backend/controllers/systemInfo");
 
 dotEnv.config();
 const env = process.env.NODE_ENV || "dev";
@@ -33,15 +34,18 @@ app.use(morgan(env));
 app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use(express.static(path.join(__dirname, "/frontend/build")));
 
+readdirSync("./backend/routes").map((route) => {
+  app.use("/api", require(`./backend/routes/${route}`));
+});
+
+app.get("/system", systemInfo);
+
 app.get("*", (req, res) => {
   console.log(path.join(__dirname, "/frontend/build", "index.html"));
   console.log(readdirSync(path.join(__dirname, "/frontend/build")));
   res.sendFile(path.join(__dirname, "/frontend/build", "index.html"));
 });
 
-readdirSync("./backend/routes").map((route) => {
-  app.use("/api", require(`./backend/routes/${route}`));
-});
 app.use(errorHandler);
 
 const dbSuccess = () => {
