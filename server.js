@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, "/frontend/build")));
 
 app.get("*", (req, res) => {
   console.log(path.join(__dirname, "/frontend/build", "index.html"));
-  console.log(readdirSync("./frontend/build"));
+  console.log(readdirSync(path.join(__dirname, "/frontend/build")));
   res.sendFile(path.join(__dirname, "/frontend/build", "index.html"));
 });
 
@@ -48,7 +48,7 @@ const dbSuccess = () => {
   server.listen(PORT, (error) => {
     if (error) throw error;
     console.log("Server runs on", PORT);
-    console.log(readdirSync("./frontend/build"));
+    console.log(readdirSync(path.join(__dirname, "/frontend/build")));
   });
 
   io.on("connection", (socket) => {
