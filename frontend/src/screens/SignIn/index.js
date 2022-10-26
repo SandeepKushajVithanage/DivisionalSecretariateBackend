@@ -217,7 +217,7 @@ const SignIn = () => {
               <LoadingButton
                 variant="contained"
                 className={classes.textField}
-                sx={{ backgroundColor: "red" }}
+                sx={{ backgroundColor: "#DB4A39" }}
                 onClick={onGoogleSignIn}
               >
                 <GoogleIcon sx={{ color: "white" }} />
@@ -228,7 +228,7 @@ const SignIn = () => {
               <LoadingButton
                 variant="contained"
                 className={classes.textField}
-                sx={{ backgroundColor: "blue" }}
+                sx={{ backgroundColor: "#4267B2" }}
                 onClick={onFacebookSignIn}
               >
                 <FacebookIcon sx={{ color: "white" }} />

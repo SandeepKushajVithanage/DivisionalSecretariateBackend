@@ -13,6 +13,9 @@ import Home from "@mui/icons-material/Home";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import PeopleIcon from "@mui/icons-material/People";
 import ShareLocationIcon from "@mui/icons-material/ShareLocation";
+import NewspaperIcon from "@mui/icons-material/Newspaper";
+import PlaylistAddCheckIcon from "@mui/icons-material/PlaylistAddCheck";
+import CorporateFareIcon from "@mui/icons-material/CorporateFare";
 
 const navigationItems = [
   // {
@@ -45,20 +48,20 @@ const navigationItems = [
     name: "Organizations",
     path: "/dashboard/organizations",
   },
-  {
-    _id: 7,
-    name: "Contacts",
-    path: "/dashboard/contacts",
-  },
+  // {
+  //   _id: 7,
+  //   name: "Contacts",
+  //   path: "/dashboard/contacts",
+  // },
 ];
 
 const Icon = (props) => {
   // return <ArrowForwardIosIcon {...props} />;
   if (props.name === "Users") return <PeopleIcon {...props} />;
   if (props.name === "Sub Divisions") return <ShareLocationIcon {...props} />;
-  if (props.name === "News and Events") return <PeopleIcon {...props} />;
-  if (props.name === "Services") return <PeopleIcon {...props} />;
-  if (props.name === "Organizations") return <PeopleIcon {...props} />;
+  if (props.name === "News and Events") return <NewspaperIcon {...props} />;
+  if (props.name === "Services") return <PlaylistAddCheckIcon {...props} />;
+  if (props.name === "Organizations") return <CorporateFareIcon {...props} />;
   if (props.name === "Contacts") return <PeopleIcon {...props} />;
   else return <ArrowForwardIosIcon {...props} />;
 };

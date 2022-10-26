@@ -177,7 +177,7 @@ const AddUser = ({ open, onClose }) => {
           sx={styles.loadingButton}
           margin={"normal"}
         >
-          ADD
+          SAVE
         </LoadingButton>
       </Box>
     </Modal>

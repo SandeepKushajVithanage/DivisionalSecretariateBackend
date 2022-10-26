@@ -11,6 +11,7 @@ import ActionAreaCard from "./ActionAreaCard";
 import Loader from "./Loader";
 import CustomModal from "./CustomModal";
 import AddUser from "./AddUser";
+import AddSubDivision from "./AddSubDivision";
 
 export {
   Header,
@@ -26,4 +27,5 @@ export {
   Loader,
   CustomModal,
   AddUser,
+  AddSubDivision,
 };

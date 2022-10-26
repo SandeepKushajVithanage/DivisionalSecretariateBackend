@@ -1,49 +1,50 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-const { FileSchema } = require('./File')
+const { Schema } = mongoose;
 
-const { Schema } = mongoose
-
-const AreaSchema = new Schema({
+const AreaSchema = new Schema(
+  {
     name: {
-        type: String,
-        required: true,
-        trim: true,
+      type: String,
+      required: true,
+      trim: true,
     },
     description: {
-        type: String,
-        default: '',
+      type: String,
+      default: "",
     },
     image: {
-        type: String,
+      type: String,
     },
     primaryGN: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
     },
     isGNAtive: {
-        type: Boolean,
-        default: false,
+      type: Boolean,
+      default: false,
     },
     secondaryGN: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
     },
     primaryGSN: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
     },
     isGSNAtive: {
-        type: Boolean,
-        default: false,
+      type: Boolean,
+      default: false,
     },
     secondaryGSN: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
     },
-    notices: [ String ]
-}, { timestamps: true })
+    notices: [String],
+  },
+  { timestamps: true }
+);
 
-const Area = mongoose.model('Area', AreaSchema)
+const Area = mongoose.model("Area", AreaSchema);
 
-module.exports = Area
+module.exports = Area;
