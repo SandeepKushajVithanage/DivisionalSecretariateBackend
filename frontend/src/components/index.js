@@ -9,6 +9,8 @@ import EnhancedTableHead from "./EnhancedComponents/EnhancedTableHead";
 import EnhancedTableToolbar from "./EnhancedComponents/EnhancedTableToolbar";
 import ActionAreaCard from "./ActionAreaCard";
 import Loader from "./Loader";
+import CustomModal from "./CustomModal";
+import AddUser from "./AddUser";
 
 export {
   Header,
@@ -22,4 +24,6 @@ export {
   EnhancedTableToolbar,
   ActionAreaCard,
   Loader,
+  CustomModal,
+  AddUser,
 };

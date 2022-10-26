@@ -14,6 +14,7 @@ import { Button, Stack, Typography } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
 import {
+  AddUser,
   EnhancedTableHead,
   EnhancedTableToolbar,
   Loader,
@@ -93,6 +94,17 @@ const Users = () => {
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [rows, setRows] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+
+  const handleOpenModal = (row) => {
+    if (row) setModalContent(row);
+    setModalOpen(true);
+  };
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";
@@ -175,7 +187,9 @@ const Users = () => {
         </Search>
       </Stack>
       <Box marginTop={2}>
-        <Button variant="contained">Add User</Button>
+        <Button variant="contained" onClick={handleOpenModal}>
+          Add User
+        </Button>
         <Button variant="contained" sx={{ marginLeft: 1 }}>
           Create a bulk of users
         </Button>
@@ -219,8 +233,9 @@ const Users = () => {
                           role="checkbox"
                           aria-checked={isItemSelected}
                           tabIndex={-1}
-                          key={row.name}
+                          key={row._id}
                           selected={isItemSelected}
+                          onClick={() => handleOpenModal(row)}
                         >
                           <TableCell padding="checkbox">
                             <Checkbox
@@ -275,6 +290,7 @@ const Users = () => {
           />
         </Box>
       )}
+      <AddUser open={modalOpen} onClose={handleCloseModal} />
     </Box>
   );
 };

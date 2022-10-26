@@ -11,6 +11,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Home from "@mui/icons-material/Home";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import PeopleIcon from "@mui/icons-material/People";
+import ShareLocationIcon from "@mui/icons-material/ShareLocation";
 
 const navigationItems = [
   // {
@@ -51,9 +53,14 @@ const navigationItems = [
 ];
 
 const Icon = (props) => {
-  return <ArrowForwardIosIcon {...props} />;
-  if (props.name === "Home") return <Home {...props} />;
-  else return <Home {...props} />;
+  // return <ArrowForwardIosIcon {...props} />;
+  if (props.name === "Users") return <PeopleIcon {...props} />;
+  if (props.name === "Sub Divisions") return <ShareLocationIcon {...props} />;
+  if (props.name === "News and Events") return <PeopleIcon {...props} />;
+  if (props.name === "Services") return <PeopleIcon {...props} />;
+  if (props.name === "Organizations") return <PeopleIcon {...props} />;
+  if (props.name === "Contacts") return <PeopleIcon {...props} />;
+  else return <ArrowForwardIosIcon {...props} />;
 };
 const Sidebar = () => {
   const matches = useMediaQuery("(min-width:800px)");

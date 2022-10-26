@@ -43,11 +43,11 @@ const navigationItems = [
     name: "Dashboard",
     path: "/dashboard",
   },
-  {
-    _id: 3,
-    name: "News",
-    path: "/news",
-  },
+  // {
+  //   _id: 3,
+  //   name: "News",
+  //   path: "/news",
+  // },
 ];
 
 const Logo = () => {
