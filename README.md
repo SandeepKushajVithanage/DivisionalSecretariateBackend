@@ -46,6 +46,7 @@ A React JS admin app and a NodeJS backend app for the 1st part of final year pro
 
 ### Installing
 
+- [Setup environment](https://www.digitalocean.com/community/tutorials/node-js-environment-setup-node-js-installation)
 - Clone the project
 
   ```
@@ -89,7 +90,7 @@ A React JS admin app and a NodeJS backend app for the 1st part of final year pro
 
 ## Authors
 
-- SandeepKushajVithanage (sandeepkushaj3@gmail.com)
+- [SandeepKushajVithanage (sandeepkushaj3@gmail.com)](https://github.com/SandeepKushajVithanage)
 
 ## Version History
 
